@@ -46,14 +46,13 @@ body, html {
     justify-content: center;
     align-items: center;
     z-index: 2;
-    animation: aparecer 0s 3s forwards, moverFondo 3s linear infinite; /* Animaciones combinadas */
+    animation: /*aparecer 0s 3s forwards,*/ moverFondo 3s linear infinite; /* Animaciones combinadas */
   }
-  
-  .delayed-image {
-    z-index: 2; /* Asegura que esté por encima de las otras imágenes */
-    opacity: 0; /* Inicialmente invisible */
 
-    background: url("paisaje.png");
+  .fondo_animado
+  {
+    position: absolute;
+    background-image: url("paisaje.png");
     background-size: 1000px 100%; /* Hacemos el fondo más grande que el contenedor */
     background-repeat: repeat-x; /* Repetimos la imagen horizontalmente */
     position: absolute;
@@ -61,8 +60,11 @@ body, html {
     height: 243px; /* Tamaño final del contenedor */
     top: 45px;
     left: 365px;
+    z-index: 2;
     animation: aparecer 0s 3s forwards, moverFondo 3s linear infinite; /* Animaciones combinadas */
-}
+  }
+  
+
 
 @keyframes aparecer {
     0% {
@@ -75,14 +77,13 @@ body, html {
 
 @keyframes moverFondo {
     0% {
-        background-position: 0;
+        background-position: 0 0;
     }
     100% {
-        background-position: -445px; /* Mueve el fondo a la izquierda */
+        background-position: 445px 0; /* Mueve el fondo a la izquierda */
     }
 }
-
-          
+       
   
   .personaje {
     z-index: 3; /* Asegura que esté por encima de las otras imágenes */
@@ -112,4 +113,4 @@ body, html {
     100% {
       background-position: -1324px; 
     }
-  }  
+  }
